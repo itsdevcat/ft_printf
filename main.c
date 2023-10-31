@@ -1,6 +1,9 @@
 #include "libftprintf.h"
 
-int main()
+int main(void)
 {
-	ft_printf("Arroz\n");
+	int result;
+	result = ft_printf("%%\n");
+	printf("%d\n", result);
+	return (0);
 }

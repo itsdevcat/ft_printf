@@ -6,14 +6,14 @@
 #    By: cfranco- <cfranco-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 17:26:55 by cfranco-          #+#    #+#              #
-#    Updated: 2023/10/30 18:33:49 by cfranco-         ###   ########.fr        #
+#    Updated: 2023/10/31 15:40:23 by cfranco-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-SRCS = libftprintf.c 
+SRCS = libftprintf.c utils.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

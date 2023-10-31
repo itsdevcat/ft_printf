@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfranco- <cfranco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:21:56 by cfranco-          #+#    #+#             */
-/*   Updated: 2023/10/30 18:20:16 by cfranco-         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:52:57 by cfranco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF
-# define LIBFTPRINTF
+#ifndef FT_PRINTF
+# define FT_PRINTF
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -21,11 +21,14 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-void	ft_putchar(char c);
-void	ft_ishexaup(unsigned int n);
-void	ft_ishexalow(unsigned int n);
-void	ft_isunsigned(unsigned int n);
-void	ft_check(const char *s, int i, va_list args);
-void	ft_printf(const char *s, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *s);
+int ft_putnbr(int n);
+int	ft_ishexaup(unsigned int n);
+int	ft_ishexalow(unsigned int n);
+int	ft_isunsigned(unsigned int n);
+int	ft_check(const char *s, int i, va_list args);
+int	ft_printf(const char *s, ...);
+int	ft_ispoint(unsigned long long n);
 
 #endif
