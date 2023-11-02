@@ -6,7 +6,7 @@
 /*   By: cfranco- <cfranco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:35:49 by cfranco-          #+#    #+#             */
-/*   Updated: 2023/10/31 15:52:43 by cfranco-         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:28:18 by cfranco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,7 @@ int	ft_check(const char *s, int i, va_list args)
 	else if (s[i + 1] == 's')
 		count += ft_putstr(va_arg(args, char *));
 	else if (s[i + 1] == 'p')
-	{
-		count += write (1, "0x", 2);
-		count += ft_ispoint(va_arg(args, unsigned long long));
-	}
+		count += ft_ispoint(va_arg(args, unsigned long long), 1);
 	else if (s[i + 1] == 'd' || s[i + 1] == 'i')
 		count += ft_putnbr(va_arg(args, int));
 	else if (s[i + 1] == 'u')
@@ -91,6 +88,8 @@ int	ft_printf(const char *s, ...)
 	int		count;
 	va_list	args;
 
+	if (!s)
+		return (-1);
 	count = 0;
 	i = 0;
 	va_start(args, s);

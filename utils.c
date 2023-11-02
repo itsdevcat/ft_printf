@@ -6,7 +6,7 @@
 /*   By: cfranco- <cfranco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:38:52 by cfranco-          #+#    #+#             */
-/*   Updated: 2023/10/31 15:53:51 by cfranco-         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:25:30 by cfranco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,23 @@ int	ft_putstr(char *s)
 	return (i);
 }
 
-int	ft_ispoint(unsigned long long n)
+int	ft_ispoint(unsigned long long n, int control)
 {
 	char	*base;
 	int		count;
 
+	if (n == 0)
+	{
+		write (1, "(nil)", 5);
+		return (5);
+	}
 	count = 0;
 	base = "0123456789abcdef";
+	if (control == 1)
+		count += ft_putstr("0x");
 	if (n > 15)
 	{
-		count += ft_ispoint(n / 16);
+		count += ft_ispoint(n / 16, 0);
 		n = n % 16;
 	}
 	count += ft_putchar(base[n]);
